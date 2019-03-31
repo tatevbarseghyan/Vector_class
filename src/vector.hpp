@@ -24,21 +24,28 @@ class vector
         vector(const vector&);
         vector& operator= (const vector& obj);
 
+        //the overload function of operator[]
         T& operator[] (int index);
+        //the overload fuction of operator[] (for constant vector)
         const T& operator[](int i)  const
         {
             return m_vector[i];
         }
+        //this function return size of vector
         int get_size() const;
+        //this function cheks if vector is empty then return true, else return false
         bool is_empty();
+        //this function return last element of vector
         T& end_element();
-
+        //insert a element in p position
         void insert(int p, T a);
+        //delete element from p position
         void remove(int p);
-
+        //this functin add element in end of vector
         void push_back(T a);
+        //this function delete last element of vector
         T pop_back();
-
+        //the overload function of operator<<
         friend std::ostream& operator<< <>(std::ostream& out, const vector& v);
 };
 #endif
